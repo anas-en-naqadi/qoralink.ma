@@ -1,0 +1,107 @@
+/**
+ * ==============================================================================
+ * Qoralink Design Tokens — Global CSS Custom Properties
+ * ==============================================================================
+ * Target: wp-content/themes/woodmart-child/css/tokens.css
+ * Loaded via wp_enqueue_scripts (frontend) and enqueue_block_editor_assets (editor)
+ *
+ * Provides bidirectional integration with WoodMart theme settings and WooCommerce.
+ */
+
+:root {
+  /* ----------------------------------------------------------------------------
+   * 1. Brand & Accent Colors
+   * ---------------------------------------------------------------------------- */
+  --qora-color-primary: var(--wd-primary-color);
+  --qora-color-primary-hover: var(--wd-primary-color);
+  --qora-color-primary-light: var(--btn-accented-bgcolor, var(--wd-primary-color));
+  --qora-color-primary-tint: #EBF4F7;
+  --qora-color-primary-rgb: 78, 146, 168;
+
+  /* ----------------------------------------------------------------------------
+   * 2. High-Contrast Dark Tones & Text
+   * ---------------------------------------------------------------------------- */
+  --qora-color-dark: var(--wd-title-color, #07132B);
+  --qora-color-dark-hover: #1E2F4D;
+  --qora-color-body: var(--wd-text-color);
+  --qora-color-muted: #9AA5B8;
+
+  /* ----------------------------------------------------------------------------
+   * 3. Neutrals, Surfaces & Backgrounds
+   * ---------------------------------------------------------------------------- */
+  --qora-color-border: #E1E8EC;
+  --qora-color-border-subtle: rgba(0, 0, 0, 0.06);
+  --qora-color-bg-canvas: #FFFFFF;
+  --qora-color-bg-subtle: #F7FAFC;
+  --qora-color-bg-slider: #F3F3F3;
+
+  /* ----------------------------------------------------------------------------
+   * 4. Semantic Accents & Glassmorphism
+   * ---------------------------------------------------------------------------- */
+  --qora-color-deals: #E53935;
+  --qora-color-frosted-bg: rgba(255, 255, 255, 0.85);
+  --qora-color-frosted-brd: rgba(255, 255, 255, 0.60);
+  --qora-color-frosted-fallback: rgba(255, 255, 255, 0.95);
+
+  /* ----------------------------------------------------------------------------
+   * 5. Typography
+   * ---------------------------------------------------------------------------- */
+  --qora-font-heading: var(--wd-entities-font, var(--wd-title-font));
+  --qora-font-body: var(--wd-text-font);
+  --qora-font-alt: var(--wd-alternative-font, var(--wd-title-font));
+
+  /* ----------------------------------------------------------------------------
+   * 6. Container Max-Width & Fluid Gutters
+   * ---------------------------------------------------------------------------- */
+  --qora-container-max-w: var(--wd-container-w, 1320px);
+  --qora-container-max-width: 1320px;
+  --qora-gutter: 30px;
+  --qora-section-space: 80px;
+
+  /* ----------------------------------------------------------------------------
+   * 7. Border Radius
+   * ---------------------------------------------------------------------------- */
+  --qora-radius-sm: var(--btn-default-brd-radius, 5px);
+  --qora-radius-md: var(--wd-brd-radius, 8px);
+  --qora-radius-lg: 12px;
+  --qora-radius-xl: 16px;
+  --qora-radius-pill: 9999px;
+
+  /* ----------------------------------------------------------------------------
+   * 8. Shadows & Transitions
+   * ---------------------------------------------------------------------------- */
+  --qora-shadow-card: 0 10px 25px rgba(78, 146, 168, 0.08);
+  --qora-shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --qora-shadow-dropdown: 0 12px 30px rgba(7, 19, 43, 0.12);
+  --qora-shadow-frosted: 0 8px 32px rgba(7, 19, 43, 0.08);
+
+  --qora-transition-fast: 0.15s ease;
+  --qora-transition-base: 0.25s ease;
+  --qora-transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fluid Gutter & Section Spacing Adjustments */
+@media screen and (max-width: 1024.98px) {
+  :root {
+    --qora-gutter: 20px;
+    --qora-section-space: 60px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  :root {
+    --qora-gutter: 16px;
+    --qora-section-space: 40px;
+  }
+}
+
+/* Ensure global container utility class is available */
+.qora-container {
+  width: 100%;
+  max-width: var(--qora-container-max-w, 1320px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--qora-gutter, 30px);
+  padding-right: var(--qora-gutter, 30px);
+  box-sizing: border-box;
+}

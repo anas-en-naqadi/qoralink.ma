@@ -1,0 +1,110 @@
+// ==============================================================================
+// Qoralink SCSS Design Tokens — Variables (_variables.scss)
+// ==============================================================================
+// Design Tokens based on Brand Guidelines & WoodMart Active Theme Settings
+// Target Root: wp-content/themes/woodmart-child/src/styles/_variables.scss
+
+// ------------------------------------------------------------------------------
+// 1. Color Palette
+// ------------------------------------------------------------------------------
+
+// Primary Brand Cyan / Teal Accent
+$qora-color-primary:        var(--wd-primary-color) !default;
+$qora-color-primary-hover:  var(--wd-primary-color) !default;
+$qora-color-primary-light:  #87BFD1 !default; // rgb(135, 191, 209) - Logo secondary emblem, focus rings
+$qora-color-primary-tint:   #EBF4F7 !default; // rgba(78, 146, 168, 0.08) - Pill bg, subtle badges
+$qora-color-primary-rgb:    78, 146, 168 !default;
+
+// High-Contrast Dark Navy (Replaces pure #000000)
+$qora-color-dark:           #07132B !default; // rgb(7, 19, 43) - Headings, prices, dark buttons
+$qora-color-dark-hover:     #1E2F4D !default; // rgb(30, 47, 77) - Dark button hover, nav hover
+$qora-color-body:           var(--wd-text-color) !default; // Reading copy
+$qora-color-muted:          #9AA5B8 !default; // rgb(154, 165, 184) - Specs, subtitles, inactive pagination
+
+// Surface & Background Colors
+$qora-color-bg-canvas:      #FFFFFF !default; // Pure white card surface & page canvas
+$qora-color-bg-subtle:      #F7FAFC !default; // rgb(247, 250, 252) - Section background, trust bar
+$qora-color-bg-slider:      #F3F3F3 !default; // rgb(243, 243, 243) - Hero slider slide backdrop
+
+// Border Tokens
+$qora-color-border:         #E1E8EC !default; // rgb(225, 232, 236) - Cards, inputs, row dividers
+$qora-color-border-subtle:  rgba(0, 0, 0, 0.06) !default; // Divider lines
+
+// Semantic Accents & Glassmorphism
+$qora-color-deals:          #E53935 !default; // rgb(229, 57, 53) - Red Deals menu badge & sale badges
+$qora-color-frosted-bg:     rgba(255, 255, 255, 0.85) !default; // Glassmorphism checklist surface
+$qora-color-frosted-brd:    rgba(255, 255, 255, 0.60) !default; // Glassmorphism border
+$qora-color-frosted-fallback: rgba(255, 255, 255, 0.95) !default; // Fallback for browsers lacking backdrop-filter
+
+// ------------------------------------------------------------------------------
+// 2. Typography
+// ------------------------------------------------------------------------------
+
+$qora-font-heading: var(--wd-entities-font, var(--wd-title-font)) !default;
+$qora-font-body:    var(--wd-text-font) !default;
+$qora-font-alt:     var(--wd-alternative-font, var(--wd-title-font)) !default;
+
+// Font Weights
+$qora-weight-regular:  400 !default;
+$qora-weight-medium:   500 !default;
+$qora-weight-semibold: 600 !default;
+$qora-weight-bold:     700 !default;
+
+// Line Heights
+$qora-line-height-tight:   1.15 !default;
+$qora-line-height-heading: 1.25 !default;
+$qora-line-height-body:    1.55 !default;
+
+// ------------------------------------------------------------------------------
+// 3. Layout, Container & Spacing
+// ------------------------------------------------------------------------------
+
+$qora-container-max-w: 1320px !default; // Matches WoodMart --wd-container-w
+
+// Container Horizontal Gutters
+$qora-gutter-desktop: 30px !default;
+$qora-gutter-tablet:  20px !default;
+$qora-gutter-mobile:  16px !default;
+
+// Spacing Scale
+$qora-space-xs:  4px  !default;
+$qora-space-sm:  8px  !default;
+$qora-space-md:  16px !default;
+$qora-space-lg:  24px !default;
+$qora-space-xl:  32px !default;
+$qora-space-2xl: 48px !default;
+$qora-space-3xl: 64px !default;
+$qora-space-4xl: 80px !default;
+
+// Section Bottom Margin Scale
+$qora-section-space-desktop: 80px !default;
+$qora-section-space-tablet:  60px !default;
+$qora-section-space-mobile:  40px !default;
+
+// ------------------------------------------------------------------------------
+// 4. Border Radius
+// ------------------------------------------------------------------------------
+
+$qora-radius-sm:   5px    !default; // Matches --wd-form-brd-radius & --btn-default-brd-radius (buttons, inputs)
+$qora-radius-md:   8px    !default; // Matches --wd-brd-radius (product cards, category tiles)
+$qora-radius-lg:   12px   !default; // Frosted checklist card, promo duo cards
+$qora-radius-xl:   16px   !default; // Large containers, hero rounded corners
+$qora-radius-pill: 9999px !default; // Feature pills, cart count badges, category tags
+
+// ------------------------------------------------------------------------------
+// 5. Shadows, Transitions & Z-Index
+// ------------------------------------------------------------------------------
+
+$qora-shadow-card:     0 10px 25px rgba(78, 146, 168, 0.08) !default;
+$qora-shadow-subtle:   0 2px 8px rgba(0, 0, 0, 0.04) !default;
+$qora-shadow-dropdown: 0 12px 30px rgba(7, 19, 43, 0.12) !default;
+$qora-shadow-frosted:  0 8px 32px rgba(7, 19, 43, 0.08) !default;
+
+$qora-transition-fast:   0.15s ease !default;
+$qora-transition-base:   0.25s ease !default;
+$qora-transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1) !default;
+
+$qora-z-dropdown: 100 !default;
+$qora-z-sticky:   500 !default;
+$qora-z-drawer:   1000 !default;
+$qora-z-modal:    2000 !default;

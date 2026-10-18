@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/feature-banner",
+  "version": "1.0.0",
+  "title": "Qoralink Feature Banner",
+  "category": "qoralink",
+  "description": "Workspace lifestyle image banner with headline, CTA button, and frosted 4-item checklist panel.",
+  "keywords": ["banner", "workspace", "feature", "qoralink"],
+  "textdomain": "woodmart-child",
+  "icon": "cover-image",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"],
+    "default": "wide"
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "WORKSPACE ESSENTIALS"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Your Space.\nYour Way."
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Tools for a more comfortable,\nproductive and organized day."
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Explore Workspace"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "/product-category/computers/peripherals/"
+    },
+    "bgImage": {
+      "type": "string",
+      "default": "/wp-content/uploads/2026/10/Gemini_Generated_Image_nr594hnr594hnr59.jpg"
+    },
+    "checklist": {
+      "type": "array",
+      "default": [
+        { "icon": "check", "label": "Focus better" },
+        { "icon": "ergonomic", "label": "Work in comfort" },
+        { "icon": "grid", "label": "Stay organized" },
+        { "icon": "shield", "label": "Do more" }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

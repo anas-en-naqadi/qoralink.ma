@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/promo-duo",
+  "version": "1.0.0",
+  "title": "Qoralink Promo Duo Banners",
+  "category": "qoralink",
+  "description": "Two side-by-side promotional image blocks with eyebrow, headline, description, and CTA button.",
+  "keywords": ["promo", "banners", "duo", "qoralink"],
+  "textdomain": "woodmart-child",
+  "icon": "columns",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"],
+    "default": "wide"
+  },
+  "attributes": {
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "eyebrow": "POWER & CHARGING",
+          "heading": "Always\nCharged.",
+          "subtitle": "Fast, reliable power\nfor all your devices.",
+          "ctaText": "Shop Charging",
+          "ctaUrl": "/product-category/computers/peripherals/",
+          "bgImage": "/wp-content/uploads/2026/10/Gemini_Generated_Image_suzzcjsuzzcjsuzz.jpg"
+        },
+        {
+          "eyebrow": "BAGS & TRAVEL",
+          "heading": "Less Clutter.\nMore Flow.",
+          "subtitle": "Smart organization\nfor wherever you go.",
+          "ctaText": "Shop Travel Gear",
+          "ctaUrl": "/product-category/computers/laptops/business-laptops/",
+          "bgImage": "/wp-content/uploads/2026/10/Gemini_Generated_Image_z76hhaz76hhaz76h.jpg"
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

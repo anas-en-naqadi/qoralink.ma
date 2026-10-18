@@ -1,0 +1,23 @@
+// ==============================================================================
+// Qoralink Unified Design Tokens Aggregator (_tokens.scss)
+// ==============================================================================
+// Target Root: wp-content/themes/woodmart-child/src/styles/_tokens.scss
+//
+// Usage in any block's style.scss:
+//   @use '../../styles/tokens' as *;
+//   // OR
+//   @use '@styles/tokens' as *;
+//
+// This master file forwards all variables, breakpoint mixins, and component mixins.
+
+@forward 'variables';
+@forward 'breakpoints';
+@forward 'mixins';
+
+// Explicit token declarations for direct file consumers & test suites
+$qora-color-primary: var(--wd-primary-color);
+$qora-color-primary-hover: var(--wd-primary-color);
+$qora-color-dark: #07132B;
+$qora-font-heading: var(--wd-entities-font, var(--wd-title-font));
+$qora-font-body: var(--wd-text-font);
+$qora-container-max-width: 1320px;

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/category-grid",
+  "version": "1.0.0",
+  "title": "Qoralink Category Grid",
+  "category": "qoralink",
+  "description": "4x2 dynamic WooCommerce category grid pulling live categories, images, and archive links from the database.",
+  "keywords": ["categories", "grid", "woocommerce", "qoralink"],
+  "textdomain": "woodmart-child",
+  "icon": "grid-view",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"],
+    "default": "wide"
+  },
+  "attributes": {
+    "columns": {
+      "type": "number",
+      "default": 4
+    },
+    "maxItems": {
+      "type": "number",
+      "default": 8
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "slug": "laptops",
+          "customTitle": "",
+          "subtitle": "Power your\npotential.",
+          "customImage": ""
+        },
+        {
+          "slug": "telephonie",
+          "customTitle": "",
+          "subtitle": "Protect, connect,\npersonalize.",
+          "customImage": ""
+        },
+        {
+          "slug": "peripherals",
+          "customTitle": "",
+          "subtitle": "Stay powered\nanywhere.",
+          "customImage": "/wp-content/uploads/2026/09/cable.png"
+        },
+        {
+          "slug": "workstations",
+          "customTitle": "",
+          "subtitle": "A better desk,\nevery day.",
+          "customImage": ""
+        },
+        {
+          "slug": "audio",
+          "customTitle": "",
+          "subtitle": "For work, study\nand creativity.",
+          "customImage": ""
+        },
+        {
+          "slug": "business-laptops",
+          "customTitle": "",
+          "subtitle": "Carry your tech\nin style.",
+          "customImage": ""
+        },
+        {
+          "slug": "desktops",
+          "customTitle": "",
+          "subtitle": "Small tech.\nA smarter home.",
+          "customImage": ""
+        },
+        {
+          "slug": "gaming-laptops",
+          "customTitle": "",
+          "subtitle": "Great tech.\nBetter value.",
+          "customImage": ""
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

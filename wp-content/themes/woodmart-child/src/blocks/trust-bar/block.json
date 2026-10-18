@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/trust-bar",
+  "version": "1.0.0",
+  "title": "Qoralink Trust & Reliability Bar",
+  "category": "qoralink",
+  "description": "4-item reliability and trust badge bar (Fast delivery, Secure payment, Official warranty, Technical support).",
+  "keywords": ["trust", "reliability", "badges", "footer", "qoralink"],
+  "textdomain": "woodmart-child",
+  "icon": "awards",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"],
+    "default": "wide"
+  },
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "icon": "truck",
+          "title": "Fast delivery",
+          "subtitle": "Across Morocco"
+        },
+        {
+          "icon": "card",
+          "title": "Secure payment",
+          "subtitle": "CMI, cards & more"
+        },
+        {
+          "icon": "shield",
+          "title": "Official warranty",
+          "subtitle": "Genuine products"
+        },
+        {
+          "icon": "headset",
+          "title": "Real technical support",
+          "subtitle": "We're here to help"
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

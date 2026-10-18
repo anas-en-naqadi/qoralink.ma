@@ -1,0 +1,112 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/site-header",
+  "version": "1.0.0",
+  "title": "Qoralink Header",
+  "category": "qoralink",
+  "description": "Global responsive header with brand logo, WooCommerce product search, account/wishlist links, live AJAX cart counter, and 8-item category navigation.",
+  "keywords": [
+    "header",
+    "navigation",
+    "search",
+    "cart",
+    "qoralink"
+  ],
+  "textdomain": "woodmart-child",
+  "icon": "heading",
+  "supports": {
+    "html": false,
+    "align": ["full"],
+    "default": "full",
+    "inserter": true,
+    "reusable": false
+  },
+  "attributes": {
+    "logoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "logoAlt": {
+      "type": "string",
+      "default": "Qoralink"
+    },
+    "searchPlaceholder": {
+      "type": "string",
+      "default": "Search for laptops, accessories, audio, and more..."
+    },
+    "moroccoNoticeText": {
+      "type": "string",
+      "default": "Fast delivery across Morocco"
+    },
+    "showDealsRed": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMoroccoNotice": {
+      "type": "boolean",
+      "default": true
+    },
+    "showWishlist": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAccount": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCart": {
+      "type": "boolean",
+      "default": true
+    },
+    "navItems": {
+      "type": "array",
+      "default": [
+        {
+          "title": "Laptops",
+          "url": "/product-category/computers/laptops/",
+          "isDeals": false
+        },
+        {
+          "title": "Phone Accessories",
+          "url": "/product-category/accessories/",
+          "isDeals": false
+        },
+        {
+          "title": "Power & Charging",
+          "url": "/product-category/accessories/",
+          "isDeals": false
+        },
+        {
+          "title": "Workspace",
+          "url": "/product-category/computers/peripherals/",
+          "isDeals": false
+        },
+        {
+          "title": "Audio & Creator",
+          "url": "/product-category/audio/",
+          "isDeals": false
+        },
+        {
+          "title": "Bags & Travel",
+          "url": "/product-category/accessories/",
+          "isDeals": false
+        },
+        {
+          "title": "Smart Living",
+          "url": "/product-category/computers/",
+          "isDeals": false
+        },
+        {
+          "title": "Deals",
+          "url": "/shop/?on_sale=1",
+          "isDeals": true
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

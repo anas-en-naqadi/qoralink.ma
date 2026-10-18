@@ -1,0 +1,264 @@
+// ==============================================================================
+// Qoralink SCSS Design Tokens — Component & Layout Mixins (_mixins.scss)
+// ==============================================================================
+// Target Root: wp-content/themes/woodmart-child/src/styles/_mixins.scss
+
+@use 'variables' as *;
+@use 'breakpoints' as *;
+
+// ------------------------------------------------------------------------------
+// 1. Layout & Container Mixins
+// ------------------------------------------------------------------------------
+
+/// Standard Qoralink Container
+/// Automatically scales gutters to ensure ZERO horizontal overflow from 320px to 1920px+
+@mixin qora-container {
+  width: 100%;
+  max-width: var(--qora-container-max-w, #{$qora-container-max-w});
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--qora-gutter, #{$qora-gutter-desktop});
+  padding-right: var(--qora-gutter, #{$qora-gutter-desktop});
+  box-sizing: border-box;
+
+  @include tablet {
+    padding-left: var(--qora-gutter, #{$qora-gutter-tablet});
+    padding-right: var(--qora-gutter, #{$qora-gutter-tablet});
+  }
+
+  @include mobile {
+    padding-left: var(--qora-gutter, #{$qora-gutter-mobile});
+    padding-right: var(--qora-gutter, #{$qora-gutter-mobile});
+  }
+}
+
+/// Standard Section Spacing (Bottom Margin)
+@mixin qora-section-spacing {
+  margin-bottom: var(--qora-section-space, #{$qora-section-space-desktop});
+
+  @include tablet {
+    margin-bottom: var(--qora-section-space, #{$qora-section-space-tablet});
+  }
+
+  @include mobile {
+    margin-bottom: var(--qora-section-space, #{$qora-section-space-mobile});
+  }
+}
+
+// ------------------------------------------------------------------------------
+// 2. Typography Mixins
+// ------------------------------------------------------------------------------
+
+/// Heading font: WoodMart Entities / Title Font
+@mixin qora-font-heading {
+  font-family: var(--wd-entities-font, var(--wd-title-font));
+  color: var(--qora-color-dark, #{$qora-color-dark});
+  letter-spacing: -0.02em;
+}
+
+/// Body font: WoodMart Text Font & Color
+@mixin qora-font-body {
+  font-family: var(--wd-text-font);
+  color: var(--wd-text-color);
+  line-height: $qora-line-height-body;
+}
+
+/// Hero Main Heading (H1)
+@mixin qora-type-hero-h1 {
+  @include qora-font-heading;
+  font-size: 72px;
+  font-weight: $qora-weight-bold;
+  line-height: $qora-line-height-tight;
+
+  @include tablet {
+    font-size: 43px;
+  }
+
+  @include mobile {
+    font-size: 30px;
+  }
+}
+
+/// Section Heading (H2)
+@mixin qora-type-section-h2 {
+  @include qora-font-heading;
+  font-size: 36px;
+  font-weight: $qora-weight-bold;
+  line-height: $qora-line-height-heading;
+
+  @include tablet {
+    font-size: 26px;
+  }
+
+  @include mobile {
+    font-size: 22px;
+  }
+}
+
+/// Subsection / Card Heading (H3)
+@mixin qora-type-card-h3 {
+  @include qora-font-heading;
+  font-size: 24px;
+  font-weight: $qora-weight-semibold;
+  line-height: 1.3;
+
+  @include tablet {
+    font-size: 20px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+  }
+}
+
+/// Uppercase Eyebrow / Category Tag
+@mixin qora-type-eyebrow {
+  @include qora-font-heading;
+  font-size: 13px;
+  font-weight: $qora-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--qora-color-primary, #{$qora-color-primary});
+}
+
+/// Product Price Typography
+@mixin qora-type-price {
+  @include qora-font-heading;
+  font-size: 17px;
+  font-weight: $qora-weight-bold;
+  color: var(--qora-color-dark, #{$qora-color-dark});
+
+  del {
+    font-size: 13px;
+    font-weight: $qora-weight-regular;
+    color: var(--qora-color-muted, #{$qora-color-muted});
+    margin-right: 6px;
+    text-decoration: line-through;
+  }
+
+  ins {
+    text-decoration: none;
+  }
+}
+
+// ------------------------------------------------------------------------------
+// 3. Component & Surface Mixins
+// ------------------------------------------------------------------------------
+
+/// Interactive Card Surface (Product cards, Category tiles)
+@mixin qora-card-surface {
+  background-color: var(--qora-color-bg-canvas, #{$qora-color-bg-canvas});
+  border: 1px solid var(--qora-color-border, #{$qora-color-border});
+  border-radius: var(--qora-radius-md, #{$qora-radius-md});
+  box-sizing: border-box;
+  transition: transform $qora-transition-base, border-color $qora-transition-base, box-shadow $qora-transition-base;
+
+  &:hover {
+    border-color: var(--qora-color-primary-light, #{$qora-color-primary-light});
+    transform: translateY(-3px);
+    box-shadow: var(--qora-shadow-card, #{$qora-shadow-card});
+  }
+}
+
+/// Frosted Glass Checklist Card (Feature Banner)
+/// Incorporates solid fallback for browsers without backdrop-filter support
+@mixin qora-frosted-card {
+  background-color: var(--qora-color-frosted-fallback, #{$qora-color-frosted-fallback});
+  border: 1px solid var(--qora-color-frosted-brd, #{$qora-color-frosted-brd});
+  border-radius: var(--qora-radius-lg, #{$qora-radius-lg});
+  padding: 24px 30px;
+  box-shadow: var(--qora-shadow-frosted, #{$qora-shadow-frosted});
+  box-sizing: border-box;
+
+  @supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
+    background-color: var(--qora-color-frosted-bg, #{$qora-color-frosted-bg});
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  @include mobile {
+    padding: 18px 20px;
+  }
+}
+
+/// Feature Pill / Rounded Chip
+@mixin qora-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: var(--qora-color-primary-tint, #{$qora-color-primary-tint});
+  border: 1px solid rgba($qora-color-primary-rgb, 0.25);
+  border-radius: var(--qora-radius-pill, #{$qora-radius-pill});
+  font-family: var(--qora-font-body, #{$qora-font-body});
+  font-size: 13px;
+  font-weight: $qora-weight-medium;
+  color: var(--qora-color-dark, #{$qora-color-dark});
+  white-space: nowrap;
+}
+
+// ------------------------------------------------------------------------------
+// 4. Button Mixins
+// ------------------------------------------------------------------------------
+
+/// Base Button Style
+@mixin qora-btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--qora-radius-sm, #{$qora-radius-sm});
+  font-family: var(--qora-font-body, #{$qora-font-body});
+  font-size: 14px;
+  font-weight: $qora-weight-semibold;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color $qora-transition-base, color $qora-transition-base, border-color $qora-transition-base, box-shadow $qora-transition-base;
+  box-sizing: border-box;
+
+  &:focus-visible {
+    outline: 2px solid var(--qora-color-primary-light, #{$qora-color-primary-light});
+    outline-offset: 2px;
+  }
+}
+
+/// Dark Hero CTA Button
+@mixin qora-btn-dark {
+  @include qora-btn-base;
+  background-color: var(--qora-color-dark, #{$qora-color-dark});
+  color: #FFFFFF;
+
+  &:hover {
+    background-color: var(--qora-color-primary, #{$qora-color-primary});
+    color: #FFFFFF;
+  }
+}
+
+/// Primary Cyan / Teal CTA Button (AJAX Add-to-Cart, Section CTAs)
+@mixin qora-btn-cyan {
+  @include qora-btn-base;
+  background-color: var(--qora-color-primary, #{$qora-color-primary});
+  color: #FFFFFF;
+
+  &:hover {
+    background-color: var(--qora-color-primary-hover, #{$qora-color-primary-hover});
+    color: #FFFFFF;
+  }
+}
+
+/// Subtle Outline Button
+@mixin qora-btn-outline {
+  @include qora-btn-base;
+  background-color: transparent;
+  border-color: var(--qora-color-border, #{$qora-color-border});
+  color: var(--qora-color-dark, #{$qora-color-dark});
+
+  &:hover {
+    border-color: var(--qora-color-primary, #{$qora-color-primary});
+    color: var(--qora-color-primary, #{$qora-color-primary});
+    background-color: var(--qora-color-primary-tint, #{$qora-color-primary-tint});
+  }
+}

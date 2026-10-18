@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/hero-slider",
+  "version": "1.0.0",
+  "title": "Qoralink Hero Slider",
+  "category": "qoralink",
+  "description": "Multi-slide hero banner with eyebrow, highlighted heading, feature icons, CTA button, and 01/02/03 pagination.",
+  "keywords": ["hero", "slider", "banner", "qoralink"],
+  "textdomain": "woodmart-child",
+  "icon": "slides",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"],
+    "default": "full"
+  },
+  "attributes": {
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "interval": {
+      "type": "number",
+      "default": 6000
+    },
+    "slides": {
+      "type": "array",
+      "default": [
+        {
+          "eyebrow": "",
+          "headingPrimary": "Reliable\nPerformance.",
+          "headingAccent": "A Brighter Tomorrow.",
+          "subtitle": "Business-grade laptops. More value. Less waste.",
+          "ctaText": "Shop Refurbished Laptops",
+          "ctaUrl": "/product-category/computers/laptops/",
+          "bgImage": "/wp-content/uploads/2026/10/Gemini_Generated_Image_k9061nk9061nk906.jpg",
+          "features": [
+            { "icon": "leaf", "line1": "Sustainable", "line2": "choice" },
+            { "icon": "shield", "line1": "Tested", "line2": "& guaranteed" },
+            { "icon": "gear", "line1": "Ready for", "line2": "work and study" }
+          ]
+        },
+        {
+          "eyebrow": "",
+          "headingPrimary": "Level Up\nYour Game.",
+          "headingAccent": "Built For Speed.",
+          "subtitle": "Gaming laptops and custom desktops engineered for ultra-smooth frame rates.",
+          "ctaText": "Explore Gaming Gear",
+          "ctaUrl": "/product-category/computers/laptops/gaming-laptops/",
+          "bgImage": "/wp-content/uploads/2026/10/Gemini_Generated_Image_bg0crhbg0crhbg0c.jpg",
+          "features": [
+            { "icon": "bolt", "line1": "High FPS", "line2": "performance" },
+            { "icon": "shield", "line1": "Official", "line2": "warranty" },
+            { "icon": "gear", "line1": "Pro-grade", "line2": "cooling" }
+          ]
+        },
+        {
+          "eyebrow": "",
+          "headingPrimary": "Sound That\nMoves You.",
+          "headingAccent": "Pure Clarity.",
+          "subtitle": "Wireless headphones and ANC earbuds crafted for deep focus and crystal-clear calls.",
+          "ctaText": "Shop Audio Collection",
+          "ctaUrl": "/product-category/audio/",
+          "bgImage": "/wp-content/uploads/2026/10/Gemini_Generated_Image_6r3zb16r3zb16r3z.jpg",
+          "features": [
+            { "icon": "leaf", "line1": "Active noise", "line2": "cancelling" },
+            { "icon": "shield", "line1": "All-day", "line2": "comfort" },
+            { "icon": "gear", "line1": "Studio", "line2": "acoustics" }
+          ]
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

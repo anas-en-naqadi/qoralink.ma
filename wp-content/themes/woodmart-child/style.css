@@ -1,0 +1,892 @@
+/*
+ Theme Name:   Woodmart Child
+ Description:  Woodmart Child Theme
+ Author:       XTemos
+ Author URI:   http://xtemos.com
+ Template:     woodmart
+ Version:      1.0.0
+ Text Domain:  woodmart
+*/
+
+/* Lighter, softer backdrop when cart sidebar / mobile drawer is open */
+.wd-close-side,
+.wd-close-side.wd-close-side-opened {
+	background-color: rgba(7, 19, 43, 0.25) !important;
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+}
+
+/* Standard e-commerce homepage vertical rhythm between sections */
+.qora-hero-section,
+.qora-category-grid-section,
+.qora-feature-banner-section,
+.qora-product-showcase-section {
+	margin-bottom: var(--qora-section-space, clamp(34px, 3.8vw, 48px)) !important;
+	margin-block-end: var(--qora-section-space, clamp(34px, 3.8vw, 48px)) !important;
+}
+
+/* Generous breathing room between final visible section (Promo Duo) and footer */
+.qora-promo-duo-section {
+	margin-bottom: clamp(38px, 4.2vw, 52px) !important;
+	margin-block-end: clamp(38px, 4.2vw, 52px) !important;
+}
+
+/* Hide WooCommerce 'Voir le panier' link beside cart icon */
+.added_to_cart,
+.added_to_cart.wc-forward,
+.qora-showcase-card .added_to_cart,
+.qora-showcase-card__footer .added_to_cart {
+	display: none !important;
+}
+
+/* Hero Slider Features horizontal & vertical alignment lock */
+.qora-hero-features {
+	display: flex !important;
+	align-items: flex-start !important;
+	gap: 28px !important;
+	flex-wrap: wrap !important;
+}
+
+@media (max-width: 767.98px) {
+	.qora-hero-features {
+		gap: 16px !important;
+		margin-bottom: 22px !important;
+	}
+}
+
+.qora-hero-feature {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 10px !important;
+	min-height: 36px !important;
+}
+
+.qora-hero-feature__icon {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 24px !important;
+	height: 24px !important;
+	min-width: 24px !important;
+	min-height: 24px !important;
+	flex-shrink: 0 !important;
+}
+
+.qora-hero-feature__icon svg {
+	width: 22px !important;
+	height: 22px !important;
+	max-width: 22px !important;
+	max-height: 22px !important;
+	display: block !important;
+	stroke: currentColor !important;
+	flex-shrink: 0 !important;
+}
+
+.qora-hero-feature__text {
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	min-height: 36px !important;
+	line-height: 1.25 !important;
+}
+
+.qora-hero-feature__text strong {
+	display: block !important;
+	font-family: var(--wd-entities-font, var(--wd-title-font)) !important;
+	font-size: 13px !important;
+	font-weight: 700 !important;
+	color: #FFFFFF !important;
+	line-height: 1.25 !important;
+	margin: 0 !important;
+	white-space: nowrap !important;
+}
+
+.qora-hero-feature__text span {
+	display: block !important;
+	font-family: var(--wd-text-font) !important;
+	font-size: 12px !important;
+	font-weight: 400 !important;
+	color: rgba(255, 255, 255, 0.85) !important;
+	line-height: 1.25 !important;
+	margin: 0 !important;
+	white-space: nowrap !important;
+}
+
+.qora-hero-feature__text span:empty {
+	display: none !important;
+}
+
+/* ==========================================================================
+   Header Logo Centering on X & Mobile Drawer Interactivity
+   ========================================================================== */
+.qora-site-header__logo,
+.qora-logo {
+	display: inline-flex !important;
+	align-items: center !important;
+	text-decoration: none !important;
+	line-height: 1 !important;
+	color: #07132B !important;
+}
+
+.qora-logo-wrap {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 8px !important;
+	line-height: 1 !important;
+}
+
+.qora-logo-emblem,
+.qora-site-header__logo svg.qora-logo-emblem,
+.qora-logo svg.qora-logo-emblem {
+	width: 32px !important;
+	height: 32px !important;
+	min-width: 32px !important;
+	min-height: 32px !important;
+	max-width: 32px !important;
+	max-height: 32px !important;
+	display: block !important;
+	flex-shrink: 0 !important;
+	vertical-align: middle !important;
+}
+
+.qora-logo-wordmark {
+	font-family: var(--wd-entities-font, var(--wd-title-font)) !important;
+	font-size: 22px !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	letter-spacing: -0.5px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	color: #07132B !important;
+	white-space: nowrap !important;
+}
+
+.qora-logo-mark {
+	color: #07132B !important;
+}
+
+.qora-logo-text {
+	color: var(--wd-primary-color) !important;
+}
+
+@media (max-width: 1024px) {
+	.qora-site-header__top-inner,
+	.qora-header-container {
+		display: grid !important;
+		grid-template-columns: 1fr auto 1fr !important;
+		grid-template-rows: auto auto !important;
+		grid-template-areas:
+			"toggle logo actions"
+			"search search search" !important;
+		align-items: center !important;
+		row-gap: 12px !important;
+		column-gap: 8px !important;
+		min-height: auto !important;
+		padding: 10px 16px 14px !important;
+	}
+
+	.qora-site-header__mobile-toggle,
+	.qora-mobile-toggle,
+	button.qora-site-header__mobile-toggle,
+	button.qora-mobile-toggle {
+		grid-area: toggle !important;
+		display: inline-flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		justify-self: start !important;
+		width: 42px !important;
+		height: 42px !important;
+		min-height: 42px !important;
+		border: 1px solid #E1E8EC !important;
+		border-radius: 8px !important;
+		background: #ffffff !important;
+		color: #07132B !important;
+		cursor: pointer !important;
+		padding: 0 !important;
+		z-index: 5 !important;
+	}
+
+	.qora-site-header__logo,
+	.qora-logo {
+		grid-area: logo !important;
+		display: inline-flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		justify-self: center !important;
+		margin: 0 auto !important;
+		text-align: center !important;
+	}
+
+	.qora-site-header__actions,
+	.qora-header-actions {
+		grid-area: actions !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: flex-end !important;
+		justify-self: end !important;
+		gap: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	/* Hide redundant Account, Wishlist, Cart in header on tablet/mobile (contained in bottom bar) */
+	.qora-site-header__action-item--account,
+	.qora-site-header__action-item--wishlist,
+	.qora-site-header__action-item--cart {
+		display: none !important;
+	}
+
+	/* Display single high-utility Order Tracking icon link on tablet/mobile */
+	.qora-site-header__action-item--tracking {
+		display: inline-flex !important;
+		margin: 0 !important;
+	}
+
+	.qora-site-header__action-item--tracking .qora-tracking-link {
+		display: inline-flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		width: 42px !important;
+		height: 42px !important;
+		min-height: 42px !important;
+		border: 1px solid #E1E8EC !important;
+		border-radius: 8px !important;
+		background: #ffffff !important;
+		color: #07132B !important;
+		cursor: pointer !important;
+		padding: 0 !important;
+		box-shadow: none !important;
+		transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease !important;
+		touch-action: manipulation !important;
+		-webkit-tap-highlight-color: transparent !important;
+	}
+
+	.qora-site-header__action-item--tracking .qora-tracking-link:hover,
+	.qora-site-header__action-item--tracking .qora-tracking-link:focus-visible {
+		background-color: #F0F7FA !important;
+		border-color: var(--wd-primary-color) !important;
+		color: var(--wd-primary-color) !important;
+	}
+
+	.qora-site-header__action-item--tracking svg {
+		width: 22px !important;
+		height: 22px !important;
+		display: block !important;
+		stroke: currentColor !important;
+	}
+
+	.qora-site-header__action-item--tracking .qora-action-label {
+		display: none !important;
+	}
+
+	.qora-site-header__search,
+	.qora-header-search {
+		grid-area: search !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		margin: 0 !important;
+	}
+
+	.qora-site-header__nav-row,
+	.qora-header-nav-row {
+		display: none !important;
+	}
+}
+
+/* Tracking item is strictly hidden on desktop */
+.qora-site-header__action-item--tracking {
+	display: none !important;
+}
+
+@media (max-width: 480px) {
+	.qora-logo-wordmark {
+		font-size: 20px !important;
+	}
+	.qora-logo-emblem,
+	.qora-site-header__logo svg.qora-logo-emblem {
+		width: 28px !important;
+		height: 28px !important;
+		min-width: 28px !important;
+		min-height: 28px !important;
+	}
+}
+
+/* Mobile Off-Canvas Drawer & Full Viewport Backdrop */
+.qora-drawer-backdrop {
+	position: fixed !important;
+	inset: 0 !important;
+	top: 0 !important;
+	left: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	width: 100vw !important;
+	height: 100vh !important;
+	height: 100dvh !important;
+	background: rgba(7, 19, 43, 0.45) !important;
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+	opacity: 0 !important;
+	visibility: hidden !important;
+	pointer-events: none !important;
+	transition: opacity 0.25s ease, visibility 0.25s ease !important;
+	z-index: 99998 !important;
+}
+
+.qora-drawer-backdrop.is-open {
+	opacity: 1 !important;
+	visibility: visible !important;
+	pointer-events: auto !important;
+}
+
+.qora-site-header__mobile-toggle,
+.qora-mobile-toggle,
+button.qora-site-header__mobile-toggle {
+	touch-action: manipulation !important;
+	-webkit-tap-highlight-color: transparent !important;
+	user-select: none !important;
+	-webkit-user-select: none !important;
+}
+
+.qora-mobile-drawer {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	width: 320px !important;
+	max-width: 85vw !important;
+	height: 100vh !important;
+	height: 100dvh !important;
+	background: #ffffff !important;
+	z-index: 99999 !important;
+	transform: translateX(-100%) !important;
+	transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+	display: flex !important;
+	flex-direction: column !important;
+	overflow-y: auto !important;
+	-webkit-overflow-scrolling: touch !important;
+	box-shadow: 10px 0 32px rgba(7, 19, 43, 0.2) !important;
+	pointer-events: none !important;
+	visibility: hidden !important;
+}
+
+.qora-mobile-drawer.is-open {
+	transform: translateX(0) !important;
+	pointer-events: auto !important;
+	visibility: visible !important;
+}
+
+body.qora-drawer-open {
+	overflow: hidden !important;
+	touch-action: none !important;
+}
+
+/* Ensure breadcrumbs and their links on pages are fully clickable */
+.wd-breadcrumbs,
+.woocommerce-breadcrumb,
+.yoast-breadcrumbs {
+	position: relative !important;
+	z-index: 20 !important;
+	pointer-events: auto !important;
+}
+
+.wd-breadcrumbs a,
+.woocommerce-breadcrumb a,
+.yoast-breadcrumbs a {
+	position: relative !important;
+	z-index: 21 !important;
+	pointer-events: auto !important;
+	cursor: pointer !important;
+}
+
+/* Off-Canvas Mobile Drawer Site Links (About Us, Contact Us, Shop) */
+.qora-mobile-drawer__actions,
+.qora-mobile-drawer__site-links,
+.qora-drawer-site-links {
+	margin-top: auto !important;
+	padding-top: 14px !important;
+	border-top: 1px solid #EAECEF !important;
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 12px !important;
+}
+
+.qora-drawer-action-link,
+.qora-drawer-site-link {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 12px !important;
+	font-family: var(--wd-text-font) !important;
+	font-size: 14.5px !important;
+	font-weight: 600 !important;
+	color: #07132B !important;
+	text-decoration: none !important;
+	transition: color 0.18s ease, transform 0.18s ease !important;
+}
+
+.qora-drawer-action-link:hover,
+.qora-drawer-site-link:hover {
+	color: var(--wd-primary-color) !important;
+	transform: translateX(3px);
+}
+
+.qora-drawer-site-link svg {
+	width: 18px !important;
+	height: 18px !important;
+	stroke: var(--wd-primary-color) !important;
+	stroke-width: 2 !important;
+	fill: none !important;
+	flex-shrink: 0 !important;
+}
+
+/* Fast delivery notice in mobile/tablet drawer: symmetrical top/bottom padding */
+.qora-drawer-content {
+	padding-bottom: 0 !important;
+}
+
+.qora-mobile-drawer__notice,
+.qora-drawer-footer-notice {
+	margin-top: 12px !important;
+	margin-bottom: 0 !important;
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
+
+/* Mobile Category Accordions */
+.qora-mobile-menu__item-row,
+.qora-mobile-submenu__item-row {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	width: 100% !important;
+}
+
+.qora-mobile-menu__link {
+	flex: 1 1 auto !important;
+	display: flex !important;
+	align-items: center !important;
+	padding: 10px 4px !important;
+	font-family: var(--wd-entities-font, var(--wd-title-font)) !important;
+	font-size: 14.5px !important;
+	font-weight: 600 !important;
+	color: #07132B !important;
+	text-decoration: none !important;
+	transition: color 0.18s ease !important;
+}
+
+.qora-mobile-menu__link:hover {
+	color: var(--wd-primary-color) !important;
+}
+
+.qora-mobile-accordion-toggle {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 44px !important;
+	height: 44px !important;
+	min-width: 44px !important;
+	min-height: 44px !important;
+	padding: 0 !important;
+	background: transparent !important;
+	border: none !important;
+	color: var(--wd-text-color) !important;
+	cursor: pointer !important;
+	box-shadow: none !important;
+	touch-action: manipulation !important;
+	-webkit-tap-highlight-color: transparent !important;
+	transition: color 0.18s ease !important;
+}
+
+.qora-mobile-accordion-toggle:hover,
+.qora-mobile-accordion-toggle:focus-visible {
+	color: var(--wd-primary-color) !important;
+	outline: none !important;
+}
+
+.qora-mobile-accordion-toggle svg {
+	width: 14px !important;
+	height: 14px !important;
+	stroke: currentColor !important;
+	stroke-width: 2.2 !important;
+	fill: none !important;
+	transition: transform 0.24s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	pointer-events: none !important;
+}
+
+.qora-mobile-accordion-toggle--sub svg {
+	width: 12px !important;
+	height: 12px !important;
+}
+
+.qora-mobile-menu__item.is-open > .qora-mobile-menu__item-row > .qora-mobile-accordion-toggle svg,
+.qora-mobile-submenu__item.is-open > .qora-mobile-submenu__item-row > .qora-mobile-accordion-toggle svg {
+	transform: rotate(180deg) !important;
+	stroke: var(--wd-primary-color) !important;
+}
+
+.qora-mobile-submenu,
+.qora-mobile-subsubmenu {
+	display: none;
+	list-style: none !important;
+	margin: 0 0 8px 8px !important;
+	padding: 2px 0 6px 12px !important;
+	border-left: 2px solid #E2E8F0 !important;
+	overflow: hidden !important;
+	transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease !important;
+}
+
+.qora-mobile-menu__item.is-open > .qora-mobile-submenu,
+.qora-mobile-submenu__item.is-open > .qora-mobile-subsubmenu {
+	display: block !important;
+}
+
+.qora-mobile-submenu[hidden],
+.qora-mobile-subsubmenu[hidden] {
+	display: none !important;
+}
+
+.qora-mobile-submenu__item {
+	border-bottom: 1px solid rgba(241, 245, 249, 0.6) !important;
+}
+
+.qora-mobile-submenu__item:last-child {
+	border-bottom: none !important;
+}
+
+.qora-mobile-submenu__link {
+	flex: 1 1 auto !important;
+	display: block !important;
+	padding: 8px 4px !important;
+	font-family: var(--wd-text-font) !important;
+	font-size: 13.5px !important;
+	font-weight: 500 !important;
+	color: var(--wd-text-color) !important;
+	text-decoration: none !important;
+	transition: color 0.15s ease, transform 0.15s ease !important;
+}
+
+.qora-mobile-submenu__link:hover {
+	color: var(--wd-primary-color) !important;
+	transform: translateX(2px) !important;
+}
+
+.qora-mobile-subsubmenu {
+	margin: 0 0 6px 6px !important;
+	padding: 2px 0 4px 10px !important;
+	border-left: 1.5px solid #CBD5E1 !important;
+}
+
+.qora-mobile-submenu__link--deep {
+	font-size: 12.5px !important;
+	color: var(--wd-text-color) !important;
+	padding: 6px 4px !important;
+}
+
+.qora-mobile-submenu__link--deep:hover {
+	color: #07132B !important;
+}
+
+/* -------------------------------------------------------------
+ * Product Card Layout & Showcase: Compact Height, Divider & Hide Q/
+ * ----------------------------------------------------------- */
+.qora-showcase-card__brand {
+	display: none !important;
+}
+
+.qora-showcase-card,
+.wd-product .qora-loop-product-card {
+	min-height: 305px !important;
+}
+
+.qora-showcase-card__specs {
+	margin-bottom: 16px !important;
+}
+
+.qora-showcase-card__footer {
+	padding-top: 12px !important;
+	border-top: 1px solid #F1F5F9 !important;
+	margin-top: auto !important;
+}
+
+@media (max-width: 767.98px) {
+	.qora-showcase-card,
+	.wd-product .qora-loop-product-card {
+		min-height: 285px !important;
+	}
+	.qora-showcase-card__specs {
+		margin-bottom: 12px !important;
+	}
+	.qora-showcase-card__footer {
+		padding-top: 10px !important;
+	}
+}
+
+/* -------------------------------------------------------------
+ * 1. Hero Banner Slider: Smooth Black Scrim Gradient & Pagination Numbers
+ * ----------------------------------------------------------- */
+.qora-hero-section {
+	background-color: #000000 !important;
+}
+
+.qora-hero-overlay,
+.qora-hero-bg .qora-hero-overlay {
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0.95) 0%,
+		rgba(0, 0, 0, 0.90) 18%,
+		rgba(0, 0, 0, 0.80) 32%,
+		rgba(0, 0, 0, 0.65) 46%,
+		rgba(0, 0, 0, 0.45) 60%,
+		rgba(0, 0, 0, 0.25) 74%,
+		rgba(0, 0, 0, 0.10) 86%,
+		rgba(0, 0, 0, 0.02) 94%,
+		rgba(0, 0, 0, 0) 100%
+	) !important;
+}
+
+@media (max-width: 767.98px) {
+	.qora-hero-overlay,
+	.qora-hero-bg .qora-hero-overlay {
+		background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.90) 0%,
+			rgba(0, 0, 0, 0.78) 50%,
+			rgba(0, 0, 0, 0.55) 100%
+		) !important;
+	}
+}
+
+.qora-hero-pagination {
+	position: absolute !important;
+	right: max(24px, calc((100% - 1320px) / 2 + 24px)) !important;
+	bottom: 22px !important;
+	z-index: 5 !important;
+	display: flex !important;
+	align-items: flex-end !important;
+	gap: 16px !important;
+}
+
+button.qora-hero-page-btn,
+.qora-hero-page-btn,
+button.qora-hero-page-btn:hover,
+button.qora-hero-page-btn:focus,
+button.qora-hero-page-btn:focus-visible,
+button.qora-hero-page-btn:active {
+	background: transparent !important;
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+	min-height: 0 !important;
+	min-width: 0 !important;
+	height: auto !important;
+	width: auto !important;
+	padding: 4px 0 !important;
+	margin: 0 !important;
+	border-radius: 0 !important;
+	cursor: pointer !important;
+	display: inline-flex !important;
+	flex-direction: column !important;
+	align-items: flex-start !important;
+	gap: 6px !important;
+	color: rgba(255, 255, 255, 0.55) !important;
+	font-family: var(--wd-entities-font, var(--wd-title-font)) !important;
+	font-size: 13px !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	letter-spacing: 0.04em !important;
+	text-transform: none !important;
+	-webkit-tap-highlight-color: transparent !important;
+}
+
+button.qora-hero-page-btn .qora-hero-page-num,
+.qora-hero-page-btn .qora-hero-page-num {
+	display: block !important;
+	color: inherit !important;
+	font-family: var(--wd-entities-font, var(--wd-title-font)) !important;
+	font-size: 13px !important;
+	font-weight: 700 !important;
+	line-height: 1 !important;
+	transition: color 0.25s ease !important;
+}
+
+button.qora-hero-page-btn:hover,
+.qora-hero-page-btn:hover {
+	color: rgba(255, 255, 255, 0.85) !important;
+}
+
+button.qora-hero-page-btn.is-active,
+.qora-hero-page-btn.is-active,
+button.qora-hero-page-btn.is-active:hover,
+button.qora-hero-page-btn.is-active:focus {
+	color: #FFFFFF !important;
+	background: transparent !important;
+	background-color: transparent !important;
+}
+
+.qora-hero-slide {
+	transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button.qora-hero-page-btn .qora-hero-page-bar,
+.qora-hero-page-btn .qora-hero-page-bar {
+	display: block !important;
+	width: 28px !important;
+	height: 3px !important;
+	border-radius: 2px !important;
+	background-color: rgba(255, 255, 255, 0.26) !important;
+	transition: background-color 0.2s ease, width 0.2s ease !important;
+}
+
+button.qora-hero-page-btn.is-active .qora-hero-page-bar,
+.qora-hero-page-btn.is-active .qora-hero-page-bar {
+	width: 38px !important;
+	background-color: var(--wd-primary-color) !important;
+}
+
+/* -------------------------------------------------------------
+ * 2. Promo Duo: Uncolored Lighter Glassmorphism Blur on Left Half
+ * ----------------------------------------------------------- */
+.qora-promo-card__overlay {
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.16) 0%,
+		rgba(255, 255, 255, 0.08) 32%,
+		rgba(255, 255, 255, 0) 58%
+	), linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0.36) 0%,
+		rgba(0, 0, 0, 0.20) 36%,
+		rgba(0, 0, 0, 0) 62%
+	) !important;
+	backdrop-filter: blur(14px) saturate(125%) !important;
+	-webkit-backdrop-filter: blur(14px) saturate(125%) !important;
+	-webkit-mask-image: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0.95) 32%,
+		rgba(0, 0, 0, 0.70) 48%,
+		rgba(0, 0, 0, 0.25) 58%,
+		rgba(0, 0, 0, 0) 65%
+	) !important;
+	mask-image: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(0, 0, 0, 0.95) 32%,
+		rgba(0, 0, 0, 0.70) 48%,
+		rgba(0, 0, 0, 0.25) 58%,
+		rgba(0, 0, 0, 0) 65%
+	) !important;
+	z-index: 1 !important;
+	pointer-events: none !important;
+}
+
+.qora-promo-card__title {
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35) !important;
+}
+
+.qora-promo-card__subtitle {
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.28) !important;
+}
+
+@media (max-width: 767.98px) {
+	.qora-promo-card__overlay {
+		background: linear-gradient(
+			180deg,
+			rgba(255, 255, 255, 0.16) 0%,
+			rgba(255, 255, 255, 0.06) 45%,
+			rgba(255, 255, 255, 0) 70%
+		), linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.42) 0%,
+			rgba(0, 0, 0, 0.25) 50%,
+			rgba(0, 0, 0, 0) 78%
+		) !important;
+		-webkit-mask-image: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.95) 45%,
+			rgba(0, 0, 0, 0.50) 65%,
+			rgba(0, 0, 0, 0) 80%
+		) !important;
+		mask-image: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 0.95) 45%,
+			rgba(0, 0, 0, 0.50) 65%,
+			rgba(0, 0, 0, 0) 80%
+		) !important;
+		backdrop-filter: blur(14px) saturate(125%) !important;
+		-webkit-backdrop-filter: blur(14px) saturate(125%) !important;
+	}
+}
+
+/* -------------------------------------------------------------
+ * 3. Product Favorite Button: Loader on Click & Red Heart on Added
+ * ----------------------------------------------------------- */
+.qora-showcase-card__wishlist-btn a.added,
+.qora-showcase-card__wishlist-btn.added a {
+	background-color: #FFF0F0 !important;
+	color: #E53935 !important;
+	border-color: #FFCDD2 !important;
+}
+
+.qora-showcase-card__wishlist-btn a.added svg,
+.qora-showcase-card__wishlist-btn.added a svg,
+.qora-showcase-card__wishlist-btn a.added svg path,
+.qora-showcase-card__wishlist-btn.added a svg path {
+	fill: #E53935 !important;
+	stroke: #E53935 !important;
+}
+
+.qora-showcase-card__wishlist-btn a:not(.added) svg,
+.qora-showcase-card__wishlist-btn:not(.added) a:not(.added) svg {
+	fill: none !important;
+	stroke: #64748B !important;
+}
+
+.qora-showcase-card__wishlist-btn a:not(.added):hover svg,
+.qora-showcase-card__wishlist-btn:not(.added) a:not(.added):hover svg {
+	stroke: #E53935 !important;
+}
+
+.qora-showcase-card__wishlist-btn a.loading {
+	pointer-events: none !important;
+	position: relative !important;
+}
+
+.qora-showcase-card__wishlist-btn a.loading svg {
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+.qora-showcase-card__wishlist-btn a.loading::after {
+	content: "" !important;
+	display: block !important;
+	position: absolute !important;
+	width: 14px !important;
+	height: 14px !important;
+	top: 50% !important;
+	left: 50% !important;
+	margin-top: -7px !important;
+	margin-left: -7px !important;
+	border: 2px solid rgba(229, 57, 53, 0.25) !important;
+	border-top-color: #E53935 !important;
+	border-radius: 50% !important;
+	animation: qoraWishlistSpin 0.65s linear infinite !important;
+	z-index: 5 !important;
+}
+
+@keyframes qoraWishlistSpin {
+	to { transform: rotate(360deg); }
+}
+
+.qora-showcase-card__wishlist-btn .wd-action-text,
+.qora-showcase-card__wishlist-btn a span.wd-action-text {
+	display: none !important;
+	visibility: hidden !important;
+	width: 0 !important;
+	height: 0 !important;
+	font-size: 0 !important;
+	overflow: hidden !important;
+}
+

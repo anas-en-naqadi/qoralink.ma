@@ -1,0 +1,65 @@
+// ==============================================================================
+// Qoralink Responsive Breakpoints & Mixins (_breakpoints.scss)
+// ==============================================================================
+// Target Root: wp-content/themes/woodmart-child/src/styles/_breakpoints.scss
+
+// Breakpoint Definitions
+$qora-bp-mobile-max: 767.98px !default;   // Mobile: 320px - 767px
+$qora-bp-tablet-min: 768px !default;      // Tablet min
+$qora-bp-tablet-max: 1024.98px !default;  // Tablet max: 768px - 1024px
+$qora-bp-laptop-min: 1025px !default;     // Laptop min
+$qora-bp-laptop-max: 1439.98px !default;  // Laptop max: 1025px - 1439px
+$qora-bp-desktop-min: 1440px !default;    // Desktop Wide: >= 1440px
+
+// ------------------------------------------------------------------------------
+// Media Query Mixins
+// ------------------------------------------------------------------------------
+
+/// Mobile only (320px - 767px)
+@mixin mobile {
+  @media screen and (max-width: #{$qora-bp-mobile-max}) {
+    @content;
+  }
+}
+
+/// Tablet only (768px - 1024px)
+@mixin tablet {
+  @media screen and (min-width: #{$qora-bp-tablet-min}) and (max-width: #{$qora-bp-tablet-max}) {
+    @content;
+  }
+}
+
+/// Tablet & Mobile combined (<= 1024px) — Great for mobile drawer & collapsed menus
+@mixin tablet-down {
+  @media screen and (max-width: #{$qora-bp-tablet-max}) {
+    @content;
+  }
+}
+
+/// Tablet and above (>= 768px)
+@mixin tablet-up {
+  @media screen and (min-width: #{$qora-bp-tablet-min}) {
+    @content;
+  }
+}
+
+/// Laptop screen size (1025px - 1439px)
+@mixin laptop {
+  @media screen and (min-width: #{$qora-bp-laptop-min}) and (max-width: #{$qora-bp-laptop-max}) {
+    @content;
+  }
+}
+
+/// Desktop and above (>= 1025px)
+@mixin desktop {
+  @media screen and (min-width: #{$qora-bp-laptop-min}) {
+    @content;
+  }
+}
+
+/// Extra-wide Desktop (>= 1440px)
+@mixin desktop-wide {
+  @media screen and (min-width: #{$qora-bp-desktop-min}) {
+    @content;
+  }
+}

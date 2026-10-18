@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "qora/product-showcase",
+  "version": "1.0.0",
+  "title": "Qoralink 12-Product Showcase",
+  "category": "qoralink",
+  "description": "Fixed 12-product grid (6 per row) with customizable WooCommerce query source (New Arrivals, Best Sellers, On Sale, Category) and AJAX add-to-cart.",
+  "keywords": ["products", "woocommerce", "showcase", "grid", "qoralink"],
+  "textdomain": "woodmart-child",
+  "icon": "products",
+  "supports": {
+    "html": false,
+    "align": ["full", "wide"],
+    "default": "wide"
+  },
+  "attributes": {
+    "brandPrefix": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": "SELECTED"
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Curated technology for work, study and everyday life."
+    },
+    "viewAllText": {
+      "type": "string",
+      "default": "View all products"
+    },
+    "viewAllUrl": {
+      "type": "string",
+      "default": "/shop/"
+    },
+    "querySource": {
+      "type": "string",
+      "default": "new_arrivals"
+    },
+    "categorySlug": {
+      "type": "string",
+      "default": ""
+    },
+    "productCount": {
+      "type": "number",
+      "default": 12
+    },
+    "columns": {
+      "type": "number",
+      "default": 6
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
